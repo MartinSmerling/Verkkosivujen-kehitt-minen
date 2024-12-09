@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Exercise</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>HTML Forms Exercise</h1>
+        <p>Käytä tätä mallia alla olevien lomakkeiden luomiseen.</p>
+    </header>
+    <div class="container">
+
+        <h3>Sinun ikioma Form</h3>
+        <form action="/submit" method="post">
+            <label for="first-name">Etunimi:</label>
+            <input type="text" id="first-name" name="firstName" required>
+
+            <label for="last-name">Sukunimi:</label>
+            <input type="text" id="last-name" name="lastName" required>
+
+            <label for="email">Sähköposti:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="country">Maa:</label>
+            <select id="country" name="country" required>
+                <option value="">Valitse maasi</option>
+                <option value="finland">Suomi</option>
+                <option value="sweden">Ruotsi</option>
+                <option value="norway">Norja</option>
+                <option value="denmark">Viro</option>
+            </select>
+
+            <label for="comments">Kommentit:</label>
+            <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+
+            <button type="submit">Rekisteröidy</button>
+        </form>
+
+        <h5>Sinun ikioma Login Form</h5>
+        <form action="/login" method="post">
+            <label for="username">Käyttäjänimi:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Salasana:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="remember-me">
+                <input type="checkbox" id="remember-me" name="remember-me"> Muista minut
+            </label>
+
+            <button type="submit">Kirjaudu</button>
+        </form>
+
+        <h5>Sinun ikioma Feedback Form</h5>
+        <form action="/submit-feedback" method="post">
+            <label for="name">Nimi:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Sähköposti:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <div class="rating">
+                <label for="rating">Arvostelu</label>
+                <input type="radio" id="rating1" name="rating" value="1">
+                <label for="rating1">1</label>
+                <input type="radio" id="rating2" name="rating" value="2">
+                <label for="rating2">2</label>
+                <input type="radio" id="rating3" name="rating" value="3">
+                <label for="rating3">3</label>
+                <input type="radio" id="rating4" name="rating" value="4">
+                <label for="rating4">4</label>
+                <input type="radio" id="rating5" name="rating" value="5">
+                <label for="rating5">5</label>
+            </div><br><br>
+
+            <label for="feedback">Yksityiskohtainen palaute:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit">
+        </form>
+
+        <h5>Sinun ikioma Multi-step Form</h5>
+        <form id="multi-step-form" action="/submit-multi-step" method="post">
+            <!-- Step 1: Personal Information -->
+            <div class="multi-step-form active" id="step1">
+                <h4>1: Henkilökohtaiset tiedot</h4>
+                <label for="first-name">Etunimi:</label>
+                <input type="text" id="first-name" name="firstName" required>
+
+                <label for="last-name">Sukunimi:</label>
+                <input type="text" id="last-name" name="lastName" required>
+
+                <label for="email">Sähköposti:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" onclick="nextStep()">Seuraava</button>
+            </div>
+
+            <!-- Step 2: Address Information -->
+            <div class="multi-step-form" id="step2">
+                <h4>2: Osoitetiedot</h4>
+                <label for="street">Osoite:</label>
+                <input type="text" id="street" name="street" required>
+
+                <label for="city">Kaupunki:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">Maa:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="zip">Postinumero:</label>
+                <input type="text" id="zip" name="zip" required>
+
+                <button type="button" onclick="previousStep()">Edellinen</button>
+                <button type="button" onclick="nextStep()">Seuraava</button>
+            </div>
+
+            <!-- Step 3: Account Information -->
+            <div class="multi-step-form" id="step3">
+                <h4>3: Tilitiedot</h4>
+                <label for="username">Käyttäjänimi:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Salasana:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm-password">Vahvista Salasana:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required>
+
+                <button type="button" onclick="previousStep()">Previous</button>
+                <button type="submit">Lähetä</button>
+            </div>
+        </form>
+
+        <div id="nav">
+            <a href="./index.html">Mene Tauluun</a>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        function nextStep() {
+            if (currentStep < 3) {
+                document.getElementById("step" + currentStep).classList.remove("active");
+                currentStep++;
+                document.getElementById("step" + currentStep).classList.add("active");
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById("step" + currentStep).classList.remove("active");
+                currentStep--;
+                document.getElementById("step" + currentStep).classList.add("active");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

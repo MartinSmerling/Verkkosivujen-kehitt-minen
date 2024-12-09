@@ -1,0 +1,181 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #509ce9;
+  }
+  
+        /* Form styling */
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      form label {
+          font-weight: bold;
+      }
+
+      form input,
+      form select,
+      form textarea {
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+      form button {
+          width: 100px;
+          padding: 8px;
+          background: #007bff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      form button:hover {
+          background: #0056b3;
+      }
+
+      /* Styling for rating container */
+      .rating-container {
+          display: flex;
+          flex-direction: column; /* Stack items vertically */
+          gap: 5px; /* Reduced gap between items */
+      }
+
+      .rating-container input {
+          margin-right: 5px; /* Small gap between radio buttons and labels */
+      }
+
+      .rating-container label {
+          margin: 0;
+      }
+
+      #nav {
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      #nav a {
+          text-decoration: none;
+          color: #007bff;
+      }
+
+      #nav a:hover {
+          color: #0056b3;
+      }
+        /* General styling for all forms */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          background-color: #f4f4f9;
+          color: #333;
+          line-height: 1.6;
+      }
+
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      form label {
+          font-weight: bold;
+      }
+
+      form input,
+      form select,
+      form textarea {
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+      form button {
+          width: 100px;
+          padding: 8px;
+          background: #007bff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      form button:hover {
+          background: #0056b3;
+      }
+
+      .rating input {
+          margin-right: 5px;
+      }
+
+      .rating label {
+          margin-right: 15px;
+      }
+
+      .multi-step-form {
+          display: none;
+      }
+
+      .multi-step-form.active {
+          display: block;
+      }
+
+      #nav {
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      #nav a {
+          text-decoration: none;
+          color: #007bff;
+      }
+
+      #nav a:hover {
+          color: #0056b3;
+      }
